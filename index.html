@@ -32,18 +32,22 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      max-width: 650px;
-      margin: 0 auto;
-      padding: 48px 20px 64px;
-      -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    max-width: 800px; /* Changed from 650px */
+    margin: 0 auto;
+    padding: 48px 20px 64px;
+    -webkit-font-smoothing: antialiased;
     }
 
     header {
-      margin-bottom: 32px;
+    margin-bottom: 48px;
+    }
+
+    section {
+    margin-bottom: 52px;
     }
 
     h1 {
@@ -76,10 +80,7 @@
       color: var(--muted);
       margin: 0 6px;
     }
-
-    section {
-      margin-bottom: 32px;
-    }
+        
 
     h2 {
       font-size: 0.85rem;
@@ -253,7 +254,7 @@
     <section>
       <h2>Skills</h2>
       <div class="tools-group">
-        <span class="tools-label">Languages:</span> Java, Python, Kotlin, C, JavaScript, TypeScript, HTML/CSS, SQL, MATLAB
+        <span class="tools-label">Languages:</span> Java, Python, Go, Kotlin, C, JavaScript, TypeScript, HTML/CSS, SQL, MATLAB
       </div>
       <div class="tools-group">
         <span class="tools-label">Frameworks &amp; Tools:</span> React,  Node.js, Spark, Airflow, LangChain, Pandas, Snowflake, Supabase, Git, Docker
@@ -317,6 +318,7 @@
           <span class="tag">Pillow</span>
         </div>
       </div>
+    </section>
 
     <section>
       <h2>Publications</h2>
@@ -335,8 +337,6 @@
         <div class="pub-journal">Natural Product Research, 2024</div>
       </div>
 
-
-
       <div class="pub-item">
         <a href="https://chemrxiv.org/doi/10.26434/chemrxiv-2023-9b906" class="pub-link" target="_blank" rel="noopener">
           In Silico Screening and Evolution of Promising Novel Anti-Virulents Against Salmonella ATPase ↗
@@ -347,8 +347,7 @@
   </main>
 
   <footer>
-    <span>Lexi Xu</span>
-    <span>2026</span>
+    <span>Lexi Xu © 2026</span>
   </footer>
 
 </body>
