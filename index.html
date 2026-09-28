@@ -3,65 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Your Name] - Portfolio</title>
+  <title>Lexi Xu</title>
   <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      max-width: 680px;
-      margin: 40px auto;
-      padding: 0 20px;
-      color: #222;
-      background: #fafafa;
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --border: #eaeaea;
+      --tag-bg: #f4f4f5;
+      --link: #0969da;
     }
-    h1, h2 { font-weight: 600; margin-bottom: 0.5rem; }
-    h2 { margin-top: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 0.2rem; }
-    a { color: #0066cc; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    ul { padding-left: 1.2rem; }
-    .project { margin-bottom: 1.5rem; }
-    .meta { font-size: 0.9rem; color: #666; }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0d1117;
+        --text: #e6edf3;
+        --muted: #8d96a0;
+        --border: #21262d;
+        --tag-bg: #161b22;
+        --link: #4493f8;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .nav-links {
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-links span {
+      color: var(--muted);
+      margin: 0 6px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .item {
+      margin-bottom: 18px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .item-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .item-title a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .item-title a:hover {
+      color: var(--link);
+      text-decoration: underline;
+    }
+
+    .item-date {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .sub-detail {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .sub-detail span {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .tools-group {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+    }
+
+    .tools-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .tools-label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      color: var(--muted);
+      background-color: var(--tag-bg);
+      border: 1px solid var(--border);
+      padding: 1px 7px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .pub-item {
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+    }
+
+    .pub-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .pub-link {
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .pub-link:hover {
+      text-decoration: underline;
+    }
+
+    .pub-journal {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 2px;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Lexi Xu</h1>
-  <p>Hi! My name is Lexi Xu, and I am currently a junior at Rice University, majoring in Computer Science and Cognitive Science.</p>
-  <p class="meta">
-    <a href="mailto:lx31@rice.edu">Email</a> • 
-    <a href="https://linkedin.com/in/lexi-xu">LinkedIn</a> • 
-    <a href="https://github.com/lexi-x">GitHub</a>
-  </p>
+  <header>
+    <h1>Lexi Xu</h1>
+    <p class="subtitle">Computer Science &amp; Cognitive Science at Rice University</p>
+    <div class="nav-links">
+      <a href="mailto:lx31@rice.edu">lx31@rice.edu</a>
+      <span>•</span>
+      <a href="https://linkedin.com/in/lexi-xu" target="_blank" rel="noopener">LinkedIn</a>
+      <span>•</span>
+      <a href="https://github.com/lexi-x" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
 
-  <h2>Education</h2>
-  <p><strong>Rice University</strong> — B.S. in Computer Science, B.A. in Cognitive Science<br>
-  <span class="meta">Expected Graduation: May 2028</span></p>
+  <main>
+    <section>
+      <h2>About</h2>
+      <p>
+        Hello! I'm Lexi, a junior at Rice University pursuing a B.S. in Computer Science and B.A. in Cognitive Science. I'm interested in the intersection of  machine learning systems, full-stack development, and user behavior. 
+      </p>
+    </section>
 
-    <h2>Experience</h2>
-  <div class="project">
-    <h3>Apple</h3>
-    <p>Brief description of what the application does, the problem it solves, and how it works.</p>
-    <p class="meta"><strong>Technologies:</strong> Python, PostgreSQL, Docker | <a href="https://github.com/your-username/project-1">Source Code</a></p>
-  </div>
+    <section>
+      <h2>Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Rice University</span>
+          <span class="item-date">Graduating May 2028</span>
+        </div>
+        <p>B.S. in Computer Science, B.A. in Cognitive Science, Minor in Data Science (4.00 GPA)</p>
+        <div class="sub-detail">
+          <span>Coursework:</span> Algorithms and Data Structures, Concurrent Programming, Operating Systems, Compiler Design, Discrete Math, Linear Algebra, Statistics
+        </div>
+        <div class="sub-detail">
+          <span>Activities &amp; Clubs:</span> President of Rice Claude Builder Club, External Vice President of Analytics, Technology &amp; Consulting at Rice, Project Manager in RiceApps, HackRice 15 Organizer, Datathon 2026 Organizer, Computer Science TA.
+        </div>
+      </div>
+    </section>
 
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>[Project Name 1]</h3>
-    <p>Brief description of what the application does, the problem it solves, and how it works.</p>
-    <p class="meta"><strong>Technologies:</strong> Python, PostgreSQL, Docker | <a href="https://github.com/your-username/project-1">Source Code</a></p>
-  </div>
+    <section>
+      <h2>Skills</h2>
+      <div class="tools-group">
+        <span class="tools-label">Languages:</span> Java, Python, Kotlin, C, JavaScript, TypeScript, HTML/CSS, SQL, MATLAB
+      </div>
+      <div class="tools-group">
+        <span class="tools-label">Frameworks &amp; Tools:</span> React,  Node.js, Spark, Airflow, LangChain, Pandas, Snowflake, Supabase, Git, Docker
+      </div>
+    </section>
 
-  <div class="project">
-    <h3>[Project Name 2]</h3>
-    <p>Brief description of what the project does and key features implemented.</p>
-    <p class="meta"><strong>Technologies:</strong> C++, Linux | <a href="https://github.com/your-username/project-2">Source Code</a></p>
-  </div>
+    <section>
+      <h2>Experience</h2>
 
-  <h2>Technical Skills</h2>
-  <ul>
-    <li><strong>Languages:</strong> Python, Java, Go, TypeScript, JavaScript, Kotlin, C, SQL</li>
-    <li><strong>Tools:</strong> Git, Docker, Linux, VS Code</li>
-  </ul>
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Machine Learning Engineer Intern at Apple</span>
+          <span class="item-date">Summer 2026</span>
+        </div>
+        <p>Worked on the ML Engineering team on Spark data processing pipelines and XGBoost inference models for transaction decisioning.</p>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">Software Engineer Intern at PROS</span>
+          <span class="item-date">Summer 2025</span>
+        </div>
+        <p>Worked on the Developer Tooling team on a full-stack debugging platform to deploy LLM-integrated AI agents for stack trace error analysis and codebase navigation.</p>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>Featured Projects</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">
+            <a href="https://owlmart.rice.edu/landing-page" target="_blank" rel="noopener">OwlMart ↗</a>
+          </span>
+        </div>
+        <p>Worked on a full-stack marketplace platform to enable secure second-hand buying and selling for Rice students.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Next.js</span>
+          <span class="tag">Tailwind CSS</span>
+          <span class="tag">Supabase</span>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span class="item-title">
+            <a href="https://github.com/ryanvaby/Access-Prep" target="_blank" rel="noopener">Access Prep ↗</a>
+          </span>
+        </div>
+        <p>Worked on an automated document processing pipeline using Tesseract OCR, Pillow, and Flask with Gemini API integration to parse and validate financial documentation.</p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Flask</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">Gemini API</span>
+          <span class="tag">OCR</span>
+          <span class="tag">Pillow</span>
+        </div>
+      </div>
+
+    <section>
+      <h2>Publications</h2>
+
+        <div class="pub-item">
+        <a href="https://link.springer.com/article/10.1007/s44371-025-00144-9" class="pub-link" target="_blank" rel="noopener">
+          Synthesis and Evaluation of Carmofur Analogs as Antiproliferative Agents ↗
+        </a>
+        <div class="pub-journal">Discover Chemistry, 2025</div>
+      </div>
+
+      <div class="pub-item">
+        <a href="https://www.tandfonline.com/doi/full/10.1080/14786419.2024.2410410" class="pub-link" target="_blank" rel="noopener">
+          C-4 analogues of podophyllotoxin as tubulin inhibitors ↗
+        </a>
+        <div class="pub-journal">Natural Product Research, 2024</div>
+      </div>
+
+
+
+      <div class="pub-item">
+        <a href="https://chemrxiv.org/doi/10.26434/chemrxiv-2023-9b906" class="pub-link" target="_blank" rel="noopener">
+          In Silico Screening and Evolution of Promising Novel Anti-Virulents Against Salmonella ATPase ↗
+        </a>
+        <div class="pub-journal">Journal of Student Research, 2023</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Lexi Xu</span>
+    <span>2026</span>
+  </footer>
 
 </body>
 </html>
